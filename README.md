@@ -6,11 +6,14 @@
 + **Student ID:**   22028238
 + **Course:**       INT2215_23 - Advanced Programming - VNU University of Engineering and Technology
 
+
 ## Project Description
 ### ***Game description and How to play***
 + The idea is based on an old games in the 2010s by OLA Coporation.
 ###
-![Loan-12-Su-Quan](https://user-images.githubusercontent.com/124888378/222203662-b36dba51-c644-463d-a250-d0cc6dc69873.jpg)
+![2023-03-01](https://user-images.githubusercontent.com/124888378/222207699-37519766-4595-449c-912d-e7e279b1b471.png)
+
+
 
 + In 966, two years after the loss of Ngo Quyen king, our country getting in troubles, wars and conflicts happened interminably, shaping 12 warlords to occupy the localities. At that time, the Dinh Bo Linh gathered the people in Hoa Lu, recruited the army, rebelled and disrupted the 12 emissaries. You are a general under the leadership of the Dynasty.
 + After choosing a companion character (6 characters with different skill classes), the player will step straight into combat training with the help of Liu Yuan. The game of the 12th Legion is captured in this exercise.
