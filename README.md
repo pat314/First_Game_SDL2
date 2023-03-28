@@ -1,4 +1,4 @@
-# **Brave Soldier** (might adjust in the future)
+# **Monster Fight!** (might adjust in the future)
 > My first simple game project using SDL
 
 ## Introduction
