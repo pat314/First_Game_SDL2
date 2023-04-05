@@ -11,22 +11,3 @@
 ### ***Game description***
 + You are the soldier having assignment to slay monsters while walking on the road.
 + You will have 3 chances within the 3-minute time limits to slay all the monsters.
-
-//### ***Installation***
-//+ [Updating...]
-
-//### ***Techniques being used***
-//+ [Updating...]
-
-//### ***Reference Sources***
-//+ Sounds: [Updating...]
-//+ Images: [Updating...]
-//+ Skills: [Updating...]
-
-//## My Conclusion
-//### ***Strengths***
-//+ None
-//### ***Weaknesses***
-//+ None
-
-//### Self - Assessment: __/10
