@@ -1,4 +1,4 @@
-# **Monster Fight!** (might adjust in the future)
+# **Monster Fight!**
 > My first simple game project using SDL
 
 ## Introduction
@@ -8,8 +8,9 @@
 
 
 ## Project Description
-### ***Game description and How to play***
-+ [Updating...]
+### ***Game description***
++ You are the soldier having assignment to slay monsters while walking on the road.
++ You will have 3 chances within the 3-minute time limits to slay all the monsters.
 
 ### ***Installation***
 + [Updating...]
