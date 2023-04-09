@@ -11,6 +11,8 @@
 ### ***Game description***
 + You are being a soldier having assignment to slay monsters while walking on the road.
 + You will have 5 chances to slay all the monsters.
+
+### ***Game Rules***
 + Use right and left button on keyboard to move your character, and up button or right mouse click to jump.
 + Use left mouse click to shoot the gun.
 + The default bullet is sphere, you can change bullet type to laser by pressing L button and S button to change back.
