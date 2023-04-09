@@ -1,0 +1,149 @@
+# depslib dependency file v1.0
+1680715948 source:d:\code_blocks\project2\brave_soldier\baseobject.cpp
+	"BaseObject.h"
+
+1680015952 d:\code_blocks\project2\brave_soldier\baseobject.h
+	"CommonFunc.h"
+
+1681050558 d:\code_blocks\project2\brave_soldier\commonfunc.h
+	<windows.h>
+	<fstream>
+	<stdio.h>
+	<string>
+	<vector>
+	<stdlib.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+
+1680950645 source:d:\code_blocks\project2\brave_soldier\bullet.cpp
+	"Bullet.h"
+
+1680950645 d:\code_blocks\project2\brave_soldier\bullet.h
+	"BaseObject.h"
+	"CommonFunc.h"
+
+1680971889 source:d:\code_blocks\project2\brave_soldier\commonfunc.cpp
+	"CommonFunc.h"
+
+1681031852 source:d:\code_blocks\project2\brave_soldier\explosion.cpp
+	"Explosion.h"
+
+1681028921 d:\code_blocks\project2\brave_soldier\explosion.h
+	"CommonFunc.h"
+	"BaseObject.h"
+
+1680847596 source:d:\code_blocks\project2\brave_soldier\game_map.cpp
+	"game_map.h"
+
+1680685963 d:\code_blocks\project2\brave_soldier\game_map.h
+	"CommonFunc.h"
+	"BaseObject.h"
+
+1681050507 source:d:\code_blocks\project2\brave_soldier\main.cpp
+	"CommonFunc.h"
+	"BaseObject.h"
+	"game_map.h"
+	"MainCharacter.h"
+	"Timer.h"
+	"Threat.h"
+	"Explosion.h"
+
+1681037060 d:\code_blocks\project2\brave_soldier\maincharacter.h
+	<vector>
+	"CommonFunc.h"
+	"BaseObject.h"
+	"Bullet.h"
+
+1680698332 d:\code_blocks\project2\brave_soldier\timer.h
+
+1680978496 d:\code_blocks\project2\brave_soldier\threat.h
+	"CommonFunc.h"
+	"BaseObject.h"
+	"Bullet.h"
+
+1681035775 source:d:\code_blocks\project2\brave_soldier\maincharacter.cpp
+	"MainCharacter.h"
+
+1680978497 source:d:\code_blocks\project2\brave_soldier\threat.cpp
+	"Threat.h"
+
+1680703351 source:d:\code_blocks\project2\brave_soldier\timer.cpp
+	"Timer.h"
+	"CommonFunc.h"
+
+1680715948 source:d:\code_blocks\project2\monsterfight\baseobject.cpp
+	"BaseObject.h"
+
+1680015952 d:\code_blocks\project2\monsterfight\baseobject.h
+	"CommonFunc.h"
+
+1681051944 d:\code_blocks\project2\monsterfight\commonfunc.h
+	<windows.h>
+	<fstream>
+	<stdio.h>
+	<string>
+	<vector>
+	<stdlib.h>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+
+1680950645 source:d:\code_blocks\project2\monsterfight\bullet.cpp
+	"Bullet.h"
+
+1680950645 d:\code_blocks\project2\monsterfight\bullet.h
+	"BaseObject.h"
+	"CommonFunc.h"
+
+1680971889 source:d:\code_blocks\project2\monsterfight\commonfunc.cpp
+	"CommonFunc.h"
+
+1681031852 source:d:\code_blocks\project2\monsterfight\explosion.cpp
+	"Explosion.h"
+
+1681028921 d:\code_blocks\project2\monsterfight\explosion.h
+	"CommonFunc.h"
+	"BaseObject.h"
+
+1680847596 source:d:\code_blocks\project2\monsterfight\game_map.cpp
+	"game_map.h"
+
+1680685963 d:\code_blocks\project2\monsterfight\game_map.h
+	"CommonFunc.h"
+	"BaseObject.h"
+
+1681035775 source:d:\code_blocks\project2\monsterfight\maincharacter.cpp
+	"MainCharacter.h"
+
+1681037060 d:\code_blocks\project2\monsterfight\maincharacter.h
+	<vector>
+	"CommonFunc.h"
+	"BaseObject.h"
+	"Bullet.h"
+
+1680978497 source:d:\code_blocks\project2\monsterfight\threat.cpp
+	"Threat.h"
+
+1680978496 d:\code_blocks\project2\monsterfight\threat.h
+	"CommonFunc.h"
+	"BaseObject.h"
+	"Bullet.h"
+
+1680703351 source:d:\code_blocks\project2\monsterfight\timer.cpp
+	"Timer.h"
+	"CommonFunc.h"
+
+1680698332 d:\code_blocks\project2\monsterfight\timer.h
+
+1681052162 source:d:\code_blocks\project2\monsterfight\main.cpp
+	"CommonFunc.h"
+	"BaseObject.h"
+	"game_map.h"
+	"MainCharacter.h"
+	"Timer.h"
+	"Threat.h"
+	"Explosion.h"
+
