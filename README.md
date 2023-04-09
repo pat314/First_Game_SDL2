@@ -23,17 +23,17 @@
 + Seperating File
 + Game programming technique:
 
-++ Loading PNG Image
-++ Key Press Events
-++ Mouse Events
-++ Texture Loading and Rendering
-++ Color Keying
-++ Character Motion
-++ FPS Processing
-++ Collision Detection
-++ Tile Map
-++ Scrolling Map
-++ ...
+1. Loading PNG Image
+2. Key Press Events
+3. Mouse Events
+4. Texture Loading and Rendering
+5. Color Keying
+6. Character Motion
+7. FPS Processing
+8. Collision Detection
+9. Tile Map
+10. Scrolling Map
+11. ...
 
 ### ***Demo Video***
 + [Updating...]
