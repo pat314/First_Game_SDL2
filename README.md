@@ -9,5 +9,31 @@
 
 ## Project Description
 ### ***Game description***
-+ You are the soldier having assignment to slay monsters while walking on the road.
-+ You will have 3 chances within the 3-minute time limits to slay all the monsters.
++ You are being a soldier having assignment to slay monsters while walking on the road.
++ You will have 5 chances to slay all the monsters.
++ Use right and left button on keyboard to move your character, and up button or right mouse click to jump.
++ Use left mouse click to shoot the gun.
++ The default bullet is sphere, you can change bullet type to laser by pressing L button and S button to change back.
++ Watch out the bullet of colorful monster! The smaller one is just a guard soldier (thus, it is not shooting bullet!). However, you are not allowed to touch any monster as well as monster bullet. If not, you will die.
++ Once you kill all monster appearing on the screen, you win and the game ends.
+
+### ***Techniques being used***
++ SDL 2.0 Library
++ Object-oriented programming technique
++ Seperating File
++ Game programming technique:
+
+++ Loading PNG Image
+++ Key Press Events
+++ Mouse Events
+++ Texture Loading and Rendering
+++ Color Keying
+++ Character Motion
+++ FPS Processing
+++ Collision Detection
+++ Tile Map
+++ Scrolling Map
+++ ...
+
+### ***Demo Video***
++ [Updating...]
