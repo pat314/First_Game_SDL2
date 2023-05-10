@@ -9,7 +9,7 @@
 
 ## Project Description
 ### ***Game description***
-+ You are a fighter who have an assignment to hinder the monsters from invading our world by obtaining their dragon ball. On the way you approaching the ball, you have to kill all the monsters ás well as the guards so that you could find out the ball. To get the ball, you have a combat with the boss, which ís a dragon. You will have 8 lives. However, you really need to hurry up due to limited time!
++ You are a fighter who have an assignment to hinder the monsters from invading our world by obtaining their dragon ball. On the way you approaching the ball, you have to kill all the monsters as well as the guards so that you could find out the ball. To get the ball, you have a combat with the boss, which is a dragon. You will have 8 lives. However, you really need to hurry up due to limited time!
 
 
 ### ***Controls***
@@ -40,6 +40,7 @@
 10. Scrolling Map
 11. Text Rendering
 12. Geometric Drawing
+13. Music and Sound Effects
 
 ### ***Preview***
 ![image](https://github.com/tuphan22028238/First_Game_SDL2/assets/124888378/0f64ecbb-e625-4bdc-ad9b-fa6050ea1e2f)
