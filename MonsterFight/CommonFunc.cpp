@@ -1,5 +1,7 @@
 
 #include "CommonFunc.h"
+#include "BaseObject.h"
+#include "Text.h"
 
 bool SDLCommonFunction:: CheckCollision (const SDL_Rect& Obj1, const SDL_Rect& Obj2)
 {

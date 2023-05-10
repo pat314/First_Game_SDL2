@@ -27,8 +27,9 @@ public:
     void Free();
 
 protected:
-    //Biến lưu trữ ảnh
+    //Biến lưu trữ ảnh Texture
     SDL_Texture* p_object_;
+
     //Biến cài đặt kích thước cho ảnh
     SDL_Rect rect_;
 

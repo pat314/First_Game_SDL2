@@ -34,14 +34,22 @@
 		</Compiler>
 		<Unit filename="BaseObject.cpp" />
 		<Unit filename="BaseObject.h" />
+		<Unit filename="Boss.cpp" />
+		<Unit filename="Boss.h" />
 		<Unit filename="Bullet.cpp" />
 		<Unit filename="Bullet.h" />
 		<Unit filename="CommonFunc.cpp" />
 		<Unit filename="CommonFunc.h" />
 		<Unit filename="Explosion.cpp" />
 		<Unit filename="Explosion.h" />
+		<Unit filename="Geometry.cpp" />
+		<Unit filename="Geometry.h" />
 		<Unit filename="MainCharacter.cpp" />
 		<Unit filename="MainCharacter.h" />
+		<Unit filename="MainStatus.cpp" />
+		<Unit filename="MainStatus.h" />
+		<Unit filename="Text.cpp" />
+		<Unit filename="Text.h" />
 		<Unit filename="Threat.cpp" />
 		<Unit filename="Threat.h" />
 		<Unit filename="Timer.cpp" />

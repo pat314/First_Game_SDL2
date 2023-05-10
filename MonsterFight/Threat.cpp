@@ -8,7 +8,7 @@ Threat::Threat()
     x_val_threat = 0.0;
     y_val_threat = 0.0;
     x_threat = 0.0;
-    y_threat = 0.0;
+    y_threat = 10.0;
     isOnGround_threat = false;
     revive_time_threat = 0;
     frame_threat = 0;
