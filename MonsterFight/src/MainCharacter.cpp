@@ -5,7 +5,7 @@ MainCharacter::MainCharacter()
 {
     i_frame = 0;
     x = 0;
-    y = 100;
+    y = 180;
     x_val = 0;
     y_val = 0;
     w_frame = 0;
@@ -17,6 +17,7 @@ MainCharacter::MainCharacter()
     map_Y = 0;
     timeRevival = 0;
     coin_count = 0;
+    Main_Abyss = false;
     mainChaBulletType = T_SPHERE;
 }
 
@@ -28,16 +29,16 @@ MainCharacter::~MainCharacter()
 bool MainCharacter::LoadImg(std::string path, SDL_Renderer* screen)
 {
     //Gọi hàm con đồng thời gọi cả hàm cha
-    bool ret = BaseObject::LoadImg(path, screen);
+    bool success = BaseObject::LoadImg(path, screen);
 
     //Load kich thước cho 1 frame
-    if (ret == true)
+    if (success == true)
     {
         w_frame = rect_.w / SPRITE_NUM;
         h_frame = rect_.h;
     }
 
-    return ret;
+    return success;
 }
 
 void MainCharacter::set_frame()
@@ -79,7 +80,7 @@ void MainCharacter::ShowSprite (SDL_Renderer* des)
     SDL_RenderCopy(des, p_object_, current_frame, &renderQuad);
 }
 
-void MainCharacter::HandleInputAction(SDL_Event events, SDL_Renderer* screen)
+void MainCharacter::HandleInputAction(SDL_Event events, SDL_Renderer* screen, Mix_Chunk* sound[])
 {
     if (events.type == SDL_KEYDOWN)
     {
@@ -108,12 +109,14 @@ void MainCharacter::HandleInputAction(SDL_Event events, SDL_Renderer* screen)
 
         case SDLK_s:
             {
+                Mix_PlayChannel (-1, sound[9], 0);
                 mainChaBulletType = T_SPHERE;
             }
             break;
 
         case SDLK_l:
             {
+                Mix_PlayChannel (-1, sound[9], 0);
                 mainChaBulletType = T_LASER;
             }
             break;
@@ -142,10 +145,11 @@ void MainCharacter::HandleInputAction(SDL_Event events, SDL_Renderer* screen)
     {
         if (events.button.button == SDL_BUTTON_RIGHT)
         {
-            type.jump = 1;
+            type.jump = 2;
         }
         else if (events.button.button == SDL_BUTTON_LEFT)
         {
+
             //Tạo đạn
             Bullet* bullet = new Bullet();
 
@@ -169,6 +173,7 @@ void MainCharacter::HandleInputAction(SDL_Event events, SDL_Renderer* screen)
             bullet->setBullet_is_move(true);
             //"Nạp" đạn
             bulletList.push_back(bullet);
+            Mix_PlayChannel (-1, sound[0], 0);
         }
     }
 }
@@ -208,7 +213,7 @@ void MainCharacter::CoinCounting()
     coin_count++;
 }
 
-void MainCharacter::play(Map& mapData)
+void MainCharacter::play(Map& mapData, Mix_Chunk* sound[])
 {
     if (timeRevival == 0)
     {
@@ -241,9 +246,18 @@ void MainCharacter::play(Map& mapData)
                 isOnGround = false;
             }
             type.jump = 0;
+        } else if (type.jump == 2)
+        {
+            //Chỉ khi nào nhân vật trên mặt đất thì mới nhảy lên được
+            if (isOnGround == true)
+            {
+                y_val = - 1.8*H_JUMP;
+                isOnGround = false;
+            }
+            type.jump = 0;
         }
 
-        CheckGround (mapData);
+        CheckGround (mapData, sound);
         CenterMap (mapData);
     }
     //Nhân vật rơi xuống vực
@@ -270,7 +284,7 @@ void MainCharacter::CenterMap (Map& mapData)
 {
     //Set vị trí trục x: Nv đi theo chiều ngang
     //Khi nhân vật di chuyển đến quá 2/3 màn hình thì map bắt đầu di chuyển
-    mapData.start_x_ = x - (2*SCREEN_WIDTH/3);
+    mapData.start_x_ = x - (1*SCREEN_WIDTH/3);
     //Nếu mà nhân vật đi lùi (mà map đã kịch đầu) thì không lùi map nữa
     if (mapData.start_x_ < 0) mapData.start_x_ = 0;
     //Nếu mà nhân vật đi tiến (mà map đã kịch cuối) thì không tiến map nữa
@@ -286,7 +300,7 @@ void MainCharacter::CenterMap (Map& mapData)
 }
 
 
-void MainCharacter:: CheckGround (Map& mapData)
+void MainCharacter:: CheckGround (Map& mapData, Mix_Chunk* sound[])
 {
     int x1 = 0;
     int x2 = 0;
@@ -323,16 +337,30 @@ void MainCharacter:: CheckGround (Map& mapData)
         {
             if (mapData.tile[y1][x2] != BLANK_TILE || mapData.tile[y2][x2] != BLANK_TILE)
             {
-                if (mapData.tile[y1][x2] == 4)
+                if (mapData.tile[y1][x2] == 3)
+                {
+
+                    Mix_PlayChannel (-1, sound[7], 0);
+                    mapData.tile[y1][x2] = 10;
+                }
+                else if (mapData.tile[y2][x2] == 3)
+                {
+                    Mix_PlayChannel (-1, sound[7], 0);
+                    mapData.tile[y2][x2] = 10;
+                }
+                else if (mapData.tile[y1][x2] == 4)
                 {
                     mapData.tile[y1][x2] = 0;
                     CoinCounting();
+                    Mix_PlayChannel (-1, sound[6], 0);
                 }
                 else if (mapData.tile[y2][x2] == 4)
                 {
                     mapData.tile[y2][x2] = 0;
                     CoinCounting();
+                    Mix_PlayChannel (-1, sound[6], 0);
                 }
+                else if (mapData.tile[3][399] == 10) achieved_Dragon_ball ();
 
                 else
                 {
@@ -346,16 +374,32 @@ void MainCharacter:: CheckGround (Map& mapData)
         {
             if (mapData.tile[y1][x1] != BLANK_TILE || mapData.tile[y2][x1] != BLANK_TILE)
             {
-                if (mapData.tile[y1][x1] == 4)
+                if (mapData.tile[y1][x1] == 3)
+                {
+                    //if (mapData.tile[y1][x1] == 0) achieved_Dragon_ball ();
+                    Mix_PlayChannel (-1, sound[7], 0);
+                    mapData.tile[y1][x1] = 10;
+                }
+                else if (mapData.tile[y2][x1] == 3)
+                {
+                    //if (mapData.tile[y2][x1] == 0) achieved_Dragon_ball ();
+                    Mix_PlayChannel (-1, sound[7], 0);
+                    mapData.tile[y2][x1] == 10;
+                }
+                else if (mapData.tile[y1][x1] == 4)
                 {
                     mapData.tile[y1][x1] = 0;
                     CoinCounting();
+                    Mix_PlayChannel (-1, sound[6], 0);
                 }
                 else if (mapData.tile[y2][x1] == 4)
                 {
                     mapData.tile[y2][x1] = 0;
                     CoinCounting();
+                    Mix_PlayChannel (-1, sound[6], 0);
                 }
+                else if (mapData.tile[3][399] == 10) achieved_Dragon_ball ();
+
                 else
                 {
                     x = (x1 + err) * TILE_SIZE;
@@ -380,26 +424,41 @@ void MainCharacter:: CheckGround (Map& mapData)
         {
             if (mapData.tile[y2][x1] != BLANK_TILE || mapData.tile[y2][x2] != BLANK_TILE)
             {
-                if (mapData.tile[y2][x1] == 4)
+                if (mapData.tile[y2][x1] == 3)
+                {
+                     //if (mapData.tile[y2][x1] == 0) achieved_Dragon_ball ();
+                     mapData.tile[y2][x1] = 10;
+                     Mix_PlayChannel (-1, sound[7], 0);
+                }
+                else if (mapData.tile[y2][x2] == 3)
+                {
+                    //if (mapData.tile[y2][x2] == 0) achieved_Dragon_ball ();
+                    mapData.tile[y2][x2] == 10;
+                    Mix_PlayChannel (-1, sound[7], 0);
+                }
+                else if (mapData.tile[y2][x1] == 4)
                 {
                     mapData.tile[y2][x1] = 0;
                     CoinCounting();
+                    Mix_PlayChannel (-1, sound[6], 0);
                 }
                 else if (mapData.tile[y2][x2] == 4)
                 {
                     mapData.tile[y2][x2] = 0;
                     CoinCounting();
+                    Mix_PlayChannel (-1, sound[6], 0);
                 }
 
-                else if (mapData.tile[y2][x1] == 5||mapData.tile[y2][x1] == 6||mapData.tile[y2][x1] == 3)
+                else if (mapData.tile[y2][x1] == 5||mapData.tile[y2][x1] == 6)
                 {
                     mapData.tile[y2][x1] = 0;
                 }
 
-                else if (mapData.tile[y2][x2] == 5|| mapData.tile[y2][x2] == 6 || mapData.tile[y2][x2] == 3)
+                else if (mapData.tile[y2][x2] == 5|| mapData.tile[y2][x2] == 6)
                 {
                     mapData.tile[y2][x2] = 0;
                 }
+                else if (mapData.tile[3][399] == 10) achieved_Dragon_ball ();
 
                 else
                 {
@@ -415,16 +474,31 @@ void MainCharacter:: CheckGround (Map& mapData)
             if (mapData.tile[y1][x1] != BLANK_TILE || mapData.tile[y1][x2] != BLANK_TILE)
             {
 
-                if (mapData.tile[y1][x1] == 4)
+                if (mapData.tile[y1][x1] == 3)
+                {
+                    //if (mapData.tile[y1][x1] == 0) achieved_Dragon_ball ();
+                    mapData.tile[y1][x1] = 10;
+                    Mix_PlayChannel (-1, sound[7], 0);
+                }
+                else if (mapData.tile[y1][x2] == 3)
+                {
+                    //if (mapData.tile[y1][x2] == 0) achieved_Dragon_ball ();
+                    mapData.tile[y1][x2] = 10;
+                    Mix_PlayChannel (-1, sound[7], 0);
+                }
+                else if (mapData.tile[y1][x1] == 4)
                 {
                     mapData.tile[y1][x1] = 0;
                     CoinCounting();
+                    Mix_PlayChannel (-1, sound[6], 0);
                 }
                 else if (mapData.tile[y1][x2] == 4)
                 {
                     mapData.tile[y1][x2] = 0;
                     CoinCounting();
+                    Mix_PlayChannel (-1, sound[6], 0);
                 }
+                else if (mapData.tile[3][399] == 10) achieved_Dragon_ball ();
 
                 else
                 {
@@ -442,7 +516,12 @@ void MainCharacter:: CheckGround (Map& mapData)
     if (x < 0) x = 0;
     else if (x + w_frame > mapData.max_x_) x = mapData.max_x_ - w_frame - err;
     //Nếu nhân vật bị rơi xuống vực thẳm
-    if (y > mapData.max_y_) timeRevival = 60;
+    if (y > mapData.max_y_)
+    {
+        timeRevival = 60;
+
+        set_Abyss (true);
+    }
 }
 
 void MainCharacter::UpdateImg (SDL_Renderer* des)

@@ -12,18 +12,7 @@ void GameMap::LoadMap(std::string name)
         for (int j = 0; j < MAX_MAP_X; j++)
         {
           input >> game_map_.tile[i][j];
-          /*if (game_map_.tile[i][j] > 0)
-          {
-            if (j > game_map_.max_x_)
-            {
-              game_map_.max_x_ = j;
-            }
 
-            if (i > game_map_.max_y_)
-            {
-              game_map_.max_y_ = i;
-            }
-          }*/
         }
       }
 

@@ -82,7 +82,7 @@ enum PlayerStatusType
 const double GRAVITY = 0.7;
 const double V_MAX = 10;
 const double V_PLAYER = 4;
-const int H_JUMP = 18;
+const int H_JUMP = 10;
 //Lượng sai số
 const int err = 1;
 
@@ -126,5 +126,62 @@ namespace SDLCommonFunction
 const int EXPLOSION_FRAME_NUM = 8;
 
 //Thông số cho mạng nhân vật
-const int LIVE_NUM = 5;
+const int LIVE_NUM = 8;
+
+//Một số màu sắc cơ bản cho text
+enum TextColor
+{
+    RED_TEXT = 0,
+    WHITE_TEXT = 1,
+    BLACK_TEXT = 2
+};
+
+const int MAX_TIME_PLAYING = 200;
+
+//Kích cỡ font chữ
+const int FONT_SIZE_1 = 18;
+const int FONT_SIZE_2 = 72;
+const int FONT_SIZE_3 = 30;
+
+//Định nghĩa cho lớp Hình học
+struct GeometryFormat
+{
+    GeometryFormat (int left, int top, int width, int height) {G_left = left; G_top = top; G_width = width; G_height = height;};
+
+    int G_left;
+    int G_top;
+    int G_width;
+    int G_height;
+};
+
+struct ColorGeometry
+{
+    ColorGeometry (Uint8 r, Uint8 g, Uint8 b) {R = r; G = g; B = b;};
+    Uint8 R;
+    Uint8 G;
+    Uint8 B;
+};
+
+
+//Định nghĩa thông số cho Boss
+#define GRAVITY_SPEED 0.8
+#define MAX_FALL_SPEED 10
+
+#define BOSS_SPEED 2
+#define BOSS_HEIGHT_VAL 18
+
+#define FRAME_NUM_32 32
+const int BOSS_HP = 5;
+
+//Audio
+static Mix_Chunk* g_SFX [10];
+
+static Mix_Music* g_menu_music = NULL;
+static Mix_Music* g_game_music = NULL;
+
+//Menu
+
+const int MENU_ITEM_NUMBER = 3;
+
 #endif // COMMON_FUNCTION_H_
+
