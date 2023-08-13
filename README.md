@@ -48,9 +48,12 @@
 ![image](https://github.com/tuphan22028238/First_Game_SDL2/assets/124888378/b14db458-3e79-4e71-9415-0b17c33cdd34)
 
 ### ***What's new in the latest version?***
+[11/05/2023]
 + Adding menu including: play, instructions and exit button. The menu background layout is self - designed and button is made of text, which would automatically alter the color when the mouse points at them.
 + The game can just play in the time limit. The countdown clock is set up!
 + The final boss is added! It is an dragon which possesses as well as protects the dragon ball.
 + Texts and figures that illustrates the number of coins earned, the number of threats killed, countdown time and the boss' HP is added on the top of the screen. And a rectangle and outlines is drawn by using geometric draw to make those texts and figures become more visible.
 + Adding theme music in both menu and while the game occurs. Moreover, the sound effects are also added when the gun is shooted, when the threats are hit by the main character's bullet, when the threat's bullet hits main character, when the final boss threat ejects its fire bullet and when main character falling into an abyss.
 + The last but not least, you can replay the game for several times as the game now is made to loop until you require to exit the game.
+[13/08/2023]
++ icon for .exe file is added
